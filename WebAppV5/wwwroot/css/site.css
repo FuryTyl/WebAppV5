@@ -1,0 +1,73 @@
+﻿header, footer {
+    background-color: #343a40;
+}
+
+.nav-color {
+    color: rgba(255, 255, 255, 0.5)
+}
+
+.dark-navbar {
+    background-color: #343a40 !important; /* Темно-серый цвет */
+    padding: 0.5rem 1rem;
+}
+
+.nav-badge {
+    background-color: #495057 !important;
+    font-size: 1rem;
+    padding: 0.35rem 0.65rem;
+}
+
+.nav-btn {
+    color: #f8f9fa !important;
+    border-color: #6c757d !important;
+    margin-right: 0.5rem;
+}
+
+    .nav-btn:hover {
+        background-color: #495057 !important;
+    }
+
+.cart-btn {
+    color: #f8f9fa !important;
+    border-color: #6c757d !important;
+}
+
+    .cart-btn:hover {
+        background-color: #495057 !important;
+    }
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}
+
+/*Стили для подвала */
+.fixed-bottom {
+    background-color: #343a40;
+    padding: 7px;
+    margin-top: 1rem;
+    border-top: 1px solid #495057;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+.social-icon {
+    color: #f8f9fa;
+    margin-left: 1.5rem;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+    .social-icon:hover {
+        color: #adb5bd;
+        text-decoration: none;
+    }

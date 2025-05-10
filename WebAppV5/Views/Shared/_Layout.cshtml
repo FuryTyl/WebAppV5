@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication2</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication2.styles.css" asp-append-version="true" />
+    <link href="lib/font-awesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg dark-navbar">
+            <div class="container-fluid">
+
+                @*                 <!-- Левая часть меню -->
+                <div class="d-flex align-items-center">
+                    <a class="nav-link nav-badge text-white me-3" asp-controller="Home" asp-action="Index">38157177</a>
+                    <a class="btn nav-btn btn-sm me-2" asp-controller="Home" asp-action="Index">ЛР2</a>
+                    <a class="btn nav-btn btn-sm me-2" asp-controller="Product" asp-action="Index">Каталог</a>
+                    <a class="btn nav-btn btn-sm" asp-area="Admin" asp-page="/Index">Администрирование</a>
+                </div> *@
+
+                <!-- меню сайта -->
+                <div class="d-flex align-items-center">
+                    <a class="nav-link nav-badge text-white me-3" asp-action="Index" asp-controller="Home">WebLabsV06</a>
+                    @await Component.InvokeAsync("Menu")
+                </div>
+                <!-- меню сайта - конец -->
+                <!-- Правая часть меню -->
+                <div class="d-flex align-items-center">
+                    @*                     <!-- Кнопка корзины -->
+                    <a asp-controller="Cart" asp-action="Index" class="btn cart-btn btn-sm me-3">
+                        <i class="fas fa-shopping-cart me-1"></i> 00.0 руб (0)
+                    </a> *@
+
+                    @*                     <!-- Выпадающее меню пользователя -->
+                    <div class="dropdown">
+                        <a class="dropdown-toggle d-flex align-items-center text-decoration-none text-white" asp-controller="Home" asp-action="Index" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="~/images/avatar.jpg" alt="Аватар" class="rounded-circle user-avatar me-2">
+                            <span>user@mail.ru</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li class="dropdown-item-text">
+                                <div class="d-flex align-items-center">
+                                    <img src="~/images/avatar.jpg" alt="Аватар" class="rounded-circle user-avatar me-2">
+                                    <span>user@mail.ru</span>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" asp-controller="Cart" asp-action="Index"><i class="fas fa-box-open me-2"></i>Мои товары</a></li>
+                            <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout"><i class="fas fa-sign-out-alt me-2"></i>Выход</a></li>
+                        </ul>
+                    </div> *@
+
+                    <!-- Информация пользователя -->
+                    <partial name="_UserPartial" />
+                    <!-- Информация пользователя - конец -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="fixed-bottom">
+        <div>
+            <div class="social-icons">
+                <a href="#" class="social-icon">
+                    <i class="fab fa-facebook-f fa-2x"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-vk fa-2x"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

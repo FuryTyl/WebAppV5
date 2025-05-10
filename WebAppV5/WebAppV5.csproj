@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WebAppV5.DAL\WebAppV5.DAL.csproj" />
-    <ProjectReference Include="..\WebAppV6.DAL\WebAppV5.DAL.csproj" />
   </ItemGroup>
 
 </Project>
